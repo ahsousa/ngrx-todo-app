@@ -1,0 +1,13 @@
+<div class="app-container">
+  <h1 class="text-4xl font-extrabold text-center text-gray-900 mb-8">
+    {{ title }}
+  </h1>
+  <app-todo-list
+    [items]="items$ | async"
+    (toggle)="onToggleItem($event)"
+    (delete)="onDeleteItem($event)"
+    (edit)="onEditItem($event)"
+  ></app-todo-list>
+
+  <app-add-item (addItem)="onAddItem($event)"></app-add-item>
+</div>

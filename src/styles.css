@@ -1,0 +1,160 @@
+:root {
+  --primary: #3a86ff;
+  --secondary: #8338ec;
+  --accent: #ff006e;
+  --background: #f8f9fa;
+  --surface: #ffffff;
+  --text: #212529;
+  --text-light: #6c757d;
+  --success: #38b000;
+  --danger: #d90429;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+body {
+  background: linear-gradient(135deg, var(--background) 0%, #e9ecef 100%);
+  color: var(--text);
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  padding: 2rem;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  width: 100%;
+  min-width: 1000px;
+  max-width: 1600px;
+  background-color: var(--surface);
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+
+input[type="text"], input[type="checkbox"] {
+  border: 2px solid #dee2e6;
+  padding: 0.55rem 1rem;
+  /* border-radius: 8px; */
+  font-size: 1rem;
+  outline: none;
+}
+
+input[type="text"] {
+  width: 100%;
+}
+
+input[type="text"]:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.25);
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 1em;
+}
+
+button {
+  border: none; 
+  padding: 0.75rem 1.5rem 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(58, 134, 255, 0.2);
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(58, 134, 255, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.primary {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+}
+
+.primary:hover {
+  background-color: #2d6cdf;
+}
+
+.secondary {
+  color: #6c757d;
+  border: #212529 solid 1px;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.todo-item-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-item-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+}
+
+
+
+.delete-btn, .edit-btn {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0.5rem;
+  margin-right: 0;
+}
+
+.delete-btn {
+  color: var(--danger);
+}
+
+.edit-btn {
+  color: var(--secondary);
+}
+
+.delete-btn:hover, .edit-btn:hover {
+  background-color: rgba(217, 4, 41, 0.1);
+  box-shadow: none;
+}
+.completed span {
+  color: var(--text-light) !important;
+  text-decoration: line-through;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-container {
+  display: block;
+}
+
+.input-field {
+  width: 100%;
+}

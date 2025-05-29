@@ -1,0 +1,10 @@
+<div class="list-container">
+  @if(items()?.length) { @for (item of items(); track item.id) {
+  <app-todo-item
+    [item]="item"
+    (toggle)="onToggle($event)"
+    (delete)="onDelete($event)"
+    (edit)="onEdit($event)"
+  ></app-todo-item>
+  } }
+</div>

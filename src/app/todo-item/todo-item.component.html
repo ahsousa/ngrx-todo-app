@@ -1,0 +1,33 @@
+<div class="todo-item-container">
+  <div class="todo-item-content">
+    @if(!isEditing()) {
+
+    <input type="checkbox" [checked]="item().completed" (change)="onToggle()" />
+    <span
+      [ngStyle]="{
+        'color': item().completed ? '#e0e0d1' : '#000000',
+      }"
+    >
+      {{ item().text }}
+    </span>
+
+    } @else {
+    <input
+      type="text"
+      [formControl]="editedTextControl"
+      (keyup.enter)="saveEdit()"
+      (blur)="saveEdit()"
+      class="flex-grow p-1 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-400 text-lg"
+    />
+    }
+  </div>
+
+  <div>
+    <button class="delete-btn" (click)="onDelete()">
+      <fa-icon [icon]="faTrash"></fa-icon>
+    </button>
+    <button class="edit-btn" (click)="onEdit()">
+      <fa-icon [icon]="faEdit"></fa-icon>
+    </button>
+  </div>
+</div>

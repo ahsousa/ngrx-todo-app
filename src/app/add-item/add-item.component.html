@@ -1,0 +1,14 @@
+<form [formGroup]="addItemForm" (ngSubmit)="onAddItem()">
+  <div class="form-container">
+    <input
+      type="text"
+      formControlName="itemName"
+      (keyup.enter)="onAddItem()"
+      placeholder="Add new task..."
+    />
+    <button class="primary" [disabled]="!addItemForm.valid" type="submit">
+      Add
+    </button>
+    <button class="secondary" (click)="onCancel()">Cancel</button>
+  </div>
+</form>
